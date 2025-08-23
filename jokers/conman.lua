@@ -1,0 +1,45 @@
+SMODS.Joker{ --Conman
+    key = "conman",
+    config = {
+        extra = {
+            dollars = 15
+        }
+    },
+    loc_txt = {
+        ['name'] = 'Conman',
+        ['text'] = {
+            [1] = 'When {C:attention}Blind{} is selected, gain {C:money}$15{} and {C:red}destroy{} this {C:attention}Joker{}'
+        },
+        ['unlock'] = {
+            [1] = ''
+        }
+    },
+    pos = {
+        x = 5,
+        y = 0
+    },
+    cost = 4,
+    rarity = 1,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    unlocked = true,
+    discovered = true,
+    atlas = 'CustomJokers',
+
+    calculate = function(self, card, context)
+        if context.setting_blind  then
+                return {
+                    dollars = card.ability.extra.dollars,
+                    extra = {
+                        func = function()
+                card:start_dissolve()
+                return true
+            end,
+                            message = "Scammed!",
+                        colour = G.C.RED
+                        }
+                }
+        end
+    end
+}
