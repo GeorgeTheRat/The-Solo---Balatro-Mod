@@ -8,7 +8,7 @@ SMODS.Joker{ --Conman
     loc_txt = {
         ['name'] = 'Conman',
         ['text'] = {
-            [1] = 'When {C:attention}Blind{} is selected, gain {C:money}$15{} and {C:red}destroy{} this {C:attention}Joker{}'
+            [1] = 'When {C:attention}Blind{} is selected, gain {C:attention}$15{} and {C:red}destroy{} this {C:attention}Joker{}'
         },
         ['unlock'] = {
             [1] = ''
@@ -17,6 +17,10 @@ SMODS.Joker{ --Conman
     pos = {
         x = 5,
         y = 0
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 4,
     rarity = 1,

@@ -8,7 +8,7 @@ SMODS.Consumable {
     loc_txt = {
         name = 'Stork',
         text = {
-        [1] = 'Add {C:attention}Stone Cards{} equal',
+        [1] = 'Add {C:attention}Enhanced Cards{} equal',
         [2] = 'to the number of',
         [3] = '{C:attention}consumables{} owned to hand',
         [4] = '{C:inactive}(#1#){}'
@@ -33,7 +33,13 @@ SMODS.Consumable {
                     for i = 1, #(G.consumeables and G.consumeables.cards or {}) do
                         local _rank = pseudorandom_element(SMODS.Ranks, 'add_random_rank').card_key
                         local _suit = nil
-                        local enhancement = G.P_CENTERS['m_stone']
+                        local cen_pool = {}
+                        for _, enhancement_center in pairs(G.P_CENTER_POOLS["Enhanced"]) do
+                            if enhancement_center.key ~= 'm_stone' and not enhancement_center.overrides_base_rank then
+                                cen_pool[#cen_pool + 1] = enhancement_center
+                            end
+                        end
+                        local enhancement = pseudorandom_element(cen_pool, 'add_cards_enhancement')
                         local new_card_params = { set = "Base" }
                         if _rank then new_card_params.rank = _rank end
                         if _suit then new_card_params.suit = _suit end

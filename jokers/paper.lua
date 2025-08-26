@@ -17,8 +17,12 @@ SMODS.Joker{ --Paper
         }
     },
     pos = {
-        x = 3,
+        x = 4,
         y = 1
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 2,

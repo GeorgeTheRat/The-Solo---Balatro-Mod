@@ -21,6 +21,10 @@ SMODS.Joker{ --Batteries
         x = 1,
         y = 0
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 6,
     rarity = 2,
     blueprint_compat = true,
@@ -32,7 +36,15 @@ SMODS.Joker{ --Batteries
 
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play  then
-            if (context.other_card:get_id() == 14 and next(context.poker_hands["Three of a Kind"])) then
+            if ((context.other_card:get_id() == 14 and next(context.poker_hands["Three of a Kind"])) and (function()
+    local current_played = G.GAME.hands[context.scoring_name].played or 0
+    for handname, values in pairs(G.GAME.hands) do
+        if handname ~= context.scoring_name and values.played > current_played and values.visible then
+            return false
+        end
+    end
+    return true
+end)()) then
                 return {
                     repetitions = card.ability.extra.repetitions,
                     message = localize('k_again_ex')

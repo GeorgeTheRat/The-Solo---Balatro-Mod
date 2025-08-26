@@ -1,6 +1,6 @@
 SMODS.Enhancement {
     key = 'rotten',
-    pos = { x = 5, y = 0 },
+    pos = { x = 6, y = 0 },
     config = {
         extra = {
             x_mult = 1.75,

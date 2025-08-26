@@ -19,8 +19,12 @@ SMODS.Joker{ --Togarashi
         }
     },
     pos = {
-        x = 0,
+        x = 1,
         y = 2
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 3,

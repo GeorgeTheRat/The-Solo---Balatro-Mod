@@ -1,21 +1,22 @@
-SMODS.Joker{ --Trickster
-    key = "trickster",
+SMODS.Joker{ --Overgrown Joker
+    key = "overgrownjoker",
     config = {
         extra = {
+            slot_change = 2
         }
     },
     loc_txt = {
-        ['name'] = 'Trickster',
+        ['name'] = 'Overgrown Joker',
         ['text'] = {
-            [1] = '{C:attention}+1{}{C:attention} Booster Pack {}slot'
+            [1] = '{C:attention}+2{} consumable slots'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 4,
-        y = 2
+        x = 3,
+        y = 1
     },
     display_size = {
         w = 71 * 1, 
@@ -34,10 +35,16 @@ SMODS.Joker{ --Trickster
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        SMODS.change_booster_limit(1)
+        G.E_MANAGER:add_event(Event({func = function()
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.slot_change
+            return true
+        end }))
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        SMODS.change_booster_limit(-1)
+        G.E_MANAGER:add_event(Event({func = function()
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.slot_change
+            return true
+        end }))
     end
 }

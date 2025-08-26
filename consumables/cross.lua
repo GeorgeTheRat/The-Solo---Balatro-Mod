@@ -6,7 +6,8 @@ SMODS.Consumable {
         name = 'Cross',
         text = {
         [1] = 'Create a random {C:green}Uncommon{} {C:attention}Joker{}',
-        [2] = '{C:inactive}(Does not need room){}'
+        [2] = 'and a {C:blue}Common{} {C:attention}Joker{}',
+        [3] = '{C:inactive}(Must have room){}'
     }
     },
     cost = 4,
@@ -22,7 +23,30 @@ SMODS.Consumable {
                   delay = 0.4,
                   func = function()
                       play_sound('timpani')
-                      SMODS.add_card({ set = 'Joker', rarity = 'Uncommon' })
+                      if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+                          G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+                      local new_joker = SMODS.add_card({ set = 'Joker', rarity = 'Uncommon' })
+                      if new_joker then
+                      end
+                          G.GAME.joker_buffer = 0
+                      end
+                      used_card:juice_up(0.3, 0.5)
+                      return true
+                  end
+              }))
+              delay(0.6)
+            G.E_MANAGER:add_event(Event({
+                  trigger = 'after',
+                  delay = 0.4,
+                  func = function()
+                      play_sound('timpani')
+                      if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+                          G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+                      local new_joker = SMODS.add_card({ set = 'Joker', rarity = 'Common' })
+                      if new_joker then
+                      end
+                          G.GAME.joker_buffer = 0
+                      end
                       used_card:juice_up(0.3, 0.5)
                       return true
                   end

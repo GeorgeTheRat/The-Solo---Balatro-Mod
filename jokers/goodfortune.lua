@@ -22,6 +22,10 @@ SMODS.Joker{ --Good Fortune
         x = 1,
         y = 1
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 4,
     rarity = 1,
     blueprint_compat = true,

@@ -8,7 +8,7 @@ SMODS.Joker{ --Chocolate Strawberry
     loc_txt = {
         ['name'] = 'Chocolate Strawberry',
         ['text'] = {
-            [1] = '{C:attention}+4{} {C:attention}Joker Slots{} while in a {C:attention}Blind{}{}',
+            [1] = '{C:attention}#1# {}{C:attention}Joker Slots{} while in a {C:attention}Blind{}{}',
             [2] = 'Decreases by {C:attention}1{} at end of round'
         },
         ['unlock'] = {
@@ -19,22 +19,22 @@ SMODS.Joker{ --Chocolate Strawberry
         x = 4,
         y = 0
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 4,
     rarity = 2,
-    blueprint_compat = false,
-    eternal_compat = false,
+    blueprint_compat = true,
+    eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    in_pool = function(self, args)
-          return (
-          not args 
-          or args.source ~= 'jud' 
-          or args.source == 'sho' or args.source == 'buf' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
-          )
-          and true
-      end,
+
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.banana}}
+    end,
 
     calculate = function(self, card, context)
         if context.setting_blind  and not context.blueprint then

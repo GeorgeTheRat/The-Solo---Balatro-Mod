@@ -20,6 +20,10 @@ SMODS.Joker{ --Elites
         x = 7,
         y = 0
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 6,
     rarity = 2,
     blueprint_compat = true,

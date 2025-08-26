@@ -2,15 +2,15 @@ SMODS.Joker{ --Wonders
     key = "wonders",
     config = {
         extra = {
-            Xmult_min = 1.1,
-            Xmult_max = 1.7
+            r = 11,
+            var1 = 0
         }
     },
     loc_txt = {
         ['name'] = 'Wonders',
         ['text'] = {
-            [1] = 'Played {C:attention}7s{} give {X:red,C:white}X1.1{}',
-            [2] = 'or {X:red,C:white}X2.1{} Mult when scored'
+            [1] = 'Played {C:attention}7s{} give between {X:red,C:white}X1.1{}',
+            [2] = 'and {X:red,C:white}X1.7{} Mult when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -19,6 +19,10 @@ SMODS.Joker{ --Wonders
     pos = {
         x = 7,
         y = 2
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 2,
@@ -32,8 +36,10 @@ SMODS.Joker{ --Wonders
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
             if context.other_card:get_id() == 7 then
+                card.ability.extra.var1 = (card.ability.extra.var1) + pseudorandom('var1_776df99f', 11, 17)
+                card.ability.extra.r = (card.ability.extra.r) * 0.1
                 return {
-                    Xmult = pseudorandom('Xmult_d4f4f876', card.ability.extra.Xmult_min, card.ability.extra.Xmult_max)
+                    Xmult = card.ability.extra.r
                 }
             end
         end

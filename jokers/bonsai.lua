@@ -21,6 +21,10 @@ SMODS.Joker{ --Bonsai
         x = 2,
         y = 0
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 8,
     rarity = 3,
     blueprint_compat = true,

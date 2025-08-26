@@ -17,8 +17,12 @@ SMODS.Joker{ --Punk Joker
         }
     },
     pos = {
-        x = 5,
+        x = 6,
         y = 1
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 4,
     rarity = 1,

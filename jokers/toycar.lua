@@ -9,8 +9,8 @@ SMODS.Joker{ --Toy Car
     loc_txt = {
         ['name'] = 'Toy Car',
         ['text'] = {
-            [1] = 'Earn {C:money}$#1# {}when {C:attention}Blind{} is skipped',
-            [2] = 'Increases by {C:money}$3{} when a',
+            [1] = 'Earn {C:attention}$#1# {}when {C:attention}Blind{} is skipped',
+            [2] = 'Increases by {C:attention}$3{} when a',
             [3] = '{C:attention}Blind{} is beaten in {C:attention}1{} {C:blue}hand{}'
         },
         ['unlock'] = {
@@ -18,8 +18,12 @@ SMODS.Joker{ --Toy Car
         }
     },
     pos = {
-        x = 2,
+        x = 3,
         y = 2
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 2,

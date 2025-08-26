@@ -19,6 +19,10 @@ SMODS.Joker{ --Wine
         x = 6,
         y = 2
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 7,
     rarity = 2,
     blueprint_compat = true,
@@ -73,5 +77,5 @@ G.FUNCS.check_for_buy_space = function(card)
     if card.config.center.key == "j_solo_wine" then -- ignore slot limit when bought
         return true
     end
-    return check_for_buy_space_ref()
+    return check_for_buy_space_ref(card)
 end

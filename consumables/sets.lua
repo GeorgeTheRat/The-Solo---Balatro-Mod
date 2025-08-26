@@ -1,6 +1,5 @@
 SMODS.ConsumableType {
     key = 'lenormand',
-    shader = 'spectral',
     primary_colour = HEX('bdd5d2'),
     secondary_colour = HEX('bdd5d2'),
     collection_rows = { 6, 6 },

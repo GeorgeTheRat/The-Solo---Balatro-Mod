@@ -9,16 +9,20 @@ SMODS.Joker{ --Polished Joker
     loc_txt = {
         ['name'] = 'Polished Joker',
         ['text'] = {
-            [1] = 'Gain a temporary {C:attention}discard{} when a',
-            [2] = '{C:attention}Polished Card {}is {C:attention}discarded{}'
+            [1] = 'Gain a temporary Discard when',
+            [2] = 'a {C:attention}Polished Card {}is discarded'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 4,
+        x = 5,
         y = 1
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 6,
     rarity = 2,

@@ -1,6 +1,6 @@
 SMODS.Enhancement {
     key = 'polished',
-    pos = { x = 4, y = 0 },
+    pos = { x = 5, y = 0 },
     config = {
         extra = {
             card_draw = 2

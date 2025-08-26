@@ -20,6 +20,10 @@ SMODS.Joker{ --Waterfall
         x = 5,
         y = 2
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 5,
     rarity = 2,
     blueprint_compat = true,

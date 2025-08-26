@@ -28,9 +28,22 @@ SMODS.Enhancement {
     end,
     calculate = function(self, card, context)
         if context.cardarea == G.hand and context.main_scoring then
-            card.ability.extra.chip = (card.ability.extra.chip) + 20
+            return { chips = card.ability.extra.chip }
         end
-        if context.cardarea == G.hand and context.main_scoring then
+        if context.discard and context.other_card == card then
+            return { func = function()
+                    card.ability.extra.chip = (card.ability.extra.chip) + 20
+                    return true
+                end }
+        end
+        if context.main_scoring and context.cardarea == G.play and (function()
+    for i = 1, #G.jokers.cards do
+        if G.jokers.cards[i].config.center.key == "j_figure1" then
+            return true
+        end
+    end
+    return false
+end)() then
             return { chips = card.ability.extra.chip }
         end
     end

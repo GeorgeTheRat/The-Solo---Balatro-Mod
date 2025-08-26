@@ -2,27 +2,30 @@ SMODS.Joker{ --Rotten Joker
     key = "rottenjoker",
     config = {
         extra = {
-            dollars = 5,
-            Xmult = 0.75
+            Xmult = 0.75,
+            dollars = 6
         }
     },
     loc_txt = {
         ['name'] = 'Rotten Joker',
         ['text'] = {
-            [1] = 'Played {C:attention}Rotten Cards{} give {C:money}$5{}',
-            [2] = 'when scored, but also',
-            [3] = 'give {X:red,C:white}X0.75{} Mult'
+            [1] = '{C:attention}Rotten Cards{} give {C:money}$6{}',
+            [2] = 'and {X:red,C:white}X0.75{} Mult when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 7,
+        x = 8,
         y = 1
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 4,
-    rarity = 2,
+    rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -34,9 +37,10 @@ SMODS.Joker{ --Rotten Joker
         if context.individual and context.cardarea == G.play  then
             if SMODS.get_enhancements(context.other_card)["m_solo_rotten"] == true then
                 return {
-                    dollars = card.ability.extra.dollars,
+                    Xmult = card.ability.extra.Xmult,
                     extra = {
-                        Xmult = card.ability.extra.Xmult
+                        dollars = card.ability.extra.dollars,
+                        colour = G.C.MONEY
                         }
                 }
             end
