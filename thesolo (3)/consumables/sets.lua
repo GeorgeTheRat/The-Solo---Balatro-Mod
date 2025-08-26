@@ -1,0 +1,33 @@
+SMODS.ConsumableType {
+    key = 'lenormand',
+    primary_colour = HEX('bdd5d2'),
+    secondary_colour = HEX('bdd5d2'),
+    collection_rows = { 6, 6 },
+    shop_rate = 0.4,
+    cards = {
+        ['c_solo_anchor'] = true,
+        ['c_solo_book'] = true,
+        ['c_solo_child'] = true,
+        ['c_solo_clover'] = true,
+        ['c_solo_coffin'] = true,
+        ['c_solo_cross'] = true,
+        ['c_solo_crossroads'] = true,
+        ['c_solo_fish'] = true,
+        ['c_solo_flowers'] = true,
+        ['c_solo_key'] = true,
+        ['c_solo_lady'] = true,
+        ['c_solo_letter'] = true,
+        ['c_solo_lily'] = true,
+        ['c_solo_mice'] = true,
+        ['c_solo_moon'] = true,
+        ['c_solo_ring'] = true,
+        ['c_solo_ship'] = true,
+        ['c_solo_snake'] = true,
+        ['c_solo_stork'] = true,
+        ['c_solo_tower'] = true
+    },
+    loc_txt = {
+        name = "Lenormand",
+        collection = "Lenormand Cards",
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "thesolo",
+  "name": "The Solo",
+  "author": [
+    "GeorgeTheRat"
+  ],
+  "description": "Vanilla+ content made for people bored of exponentiation",
+  "prefix": "solo",
+  "main_file": "main.lua",
+  "version": "0.5.0",
+  "priority": 27,
+  "badge_colour": "4f6367",
+  "badge_text_colour": "4f6367",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0711a)"
+  ]
+}
