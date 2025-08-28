@@ -1,24 +1,23 @@
-SMODS.Joker{ --Wonders
-    key = "wonders",
+SMODS.Joker{ --Colored Pencils
+    key = "coloredpencils",
     config = {
         extra = {
-            r = 11,
-            var1 = 0
         }
     },
     loc_txt = {
-        ['name'] = 'Wonders',
+        ['name'] = 'Colored Pencils',
         ['text'] = {
-            [1] = 'Played {C:attention}7s{} give between {X:red,C:white}X1.1{}',
-            [2] = 'and {X:red,C:white}X1.7{} Mult when scored'
+            [1] = 'If {C:attention}last hand{} of round',
+            [2] = 'has only {C:attention}1{} card,',
+            [3] = 'apply {C:edition}Polychrome{} to it when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 0,
-        y = 3
+        x = 5,
+        y = 0
     },
     display_size = {
         w = 71 * 1, 
@@ -35,11 +34,10 @@ SMODS.Joker{ --Wonders
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-            if context.other_card:get_id() == 7 then
-                card.ability.extra.var1 = (card.ability.extra.var1) + pseudorandom('var1_776df99f', 11, 17)
-                card.ability.extra.r = (card.ability.extra.r) * 0.1
+            if (#context.full_hand == 1 and G.GAME.current_round.hands_left == 0) then
+                context.other_card:set_edition("e_polychrome", true)
                 return {
-                    Xmult = card.ability.extra.r
+                    message = "Card Modified!"
                 }
             end
         end

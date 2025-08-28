@@ -18,7 +18,7 @@ SMODS.Joker{ --Starflower
         }
     },
     pos = {
-        x = 0,
+        x = 2,
         y = 2
     },
     display_size = {

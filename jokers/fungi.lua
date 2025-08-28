@@ -8,16 +8,16 @@ SMODS.Joker{ --Fungi
         ['name'] = 'Fungi',
         ['text'] = {
             [1] = 'Add a playing card with a random',
-            [2] = 'rank and suit to deck when',
-            [3] = 'a card is discarded'
+            [2] = '{C:attention}rank{} and {C:attention}suit{} to deck when',
+            [3] = 'a card is discarded on {C:attention}last discard{} of round'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 9,
-        y = 0
+        x = 1,
+        y = 1
     },
     display_size = {
         w = 71 * 1, 
@@ -34,6 +34,7 @@ SMODS.Joker{ --Fungi
 
     calculate = function(self, card, context)
         if context.discard  then
+            if G.GAME.current_round.discards_left == 1 then
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card'))
             local new_card = create_playing_card({
                 front = card_front,
@@ -60,6 +61,7 @@ SMODS.Joker{ --Fungi
             end,
                     message = "Added Card!"
                 }
+            end
         end
     end
 }

@@ -17,8 +17,8 @@ SMODS.Joker{ --Scissors
         }
     },
     pos = {
-        x = 9,
-        y = 1
+        x = 1,
+        y = 2
     },
     display_size = {
         w = 71 * 1, 

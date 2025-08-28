@@ -1,24 +1,23 @@
-SMODS.Joker{ --Wonders
-    key = "wonders",
+SMODS.Joker{ --Crayons
+    key = "crayons",
     config = {
         extra = {
-            r = 11,
-            var1 = 0
         }
     },
     loc_txt = {
-        ['name'] = 'Wonders',
+        ['name'] = 'Crayons',
         ['text'] = {
-            [1] = 'Played {C:attention}7s{} give between {X:red,C:white}X1.1{}',
-            [2] = 'and {X:red,C:white}X1.7{} Mult when scored'
+            [1] = 'If {C:attention}second to last hand{}',
+            [2] = 'of round has exactly {C:attention}3{}',
+            [3] = 'cards, apply {C:edition}Foil{} to them when scored'
         },
         ['unlock'] = {
-            [1] = 'Unlocked by default.'
+            [1] = ''
         }
     },
     pos = {
-        x = 0,
-        y = 3
+        x = 8,
+        y = 0
     },
     display_size = {
         w = 71 * 1, 
@@ -35,11 +34,10 @@ SMODS.Joker{ --Wonders
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-            if context.other_card:get_id() == 7 then
-                card.ability.extra.var1 = (card.ability.extra.var1) + pseudorandom('var1_776df99f', 11, 17)
-                card.ability.extra.r = (card.ability.extra.r) * 0.1
+            if (#context.full_hand == 3 and G.GAME.current_round.hands_left == 1) then
+                context.other_card:set_edition("e_foil", true)
                 return {
-                    Xmult = card.ability.extra.r
+                    message = "Card Modified!"
                 }
             end
         end

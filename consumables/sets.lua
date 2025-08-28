@@ -20,6 +20,7 @@ SMODS.ConsumableType {
         ['c_solo_lily'] = true,
         ['c_solo_mice'] = true,
         ['c_solo_moon'] = true,
+        ['c_solo_rider'] = true,
         ['c_solo_ring'] = true,
         ['c_solo_ship'] = true,
         ['c_solo_snake'] = true,

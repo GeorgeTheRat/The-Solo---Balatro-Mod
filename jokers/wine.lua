@@ -12,11 +12,11 @@ SMODS.Joker{ --Wine
             [3] = 'a free {C:attention}Negative Tag{}'
         },
         ['unlock'] = {
-            [1] = ''
+            [1] = 'Have at least 9 Jokers at once'
         }
     },
     pos = {
-        x = 6,
+        x = 9,
         y = 2
     },
     display_size = {
@@ -28,9 +28,17 @@ SMODS.Joker{ --Wine
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
-    unlocked = true,
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     atlas = 'CustomJokers',
+    in_pool = function(self, args)
+          return (
+          not args 
+          or args.source ~= 'buf' and args.source ~= 'jud' 
+          or args.source == 'sho' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     calculate = function(self, card, context)
         if context.selling_self  then
@@ -69,7 +77,21 @@ SMODS.Joker{ --Wine
     remove_from_deck = function(self, card, from_debuff)
         G.jokers.config.card_limit = G.jokers.config.card_limit - 1
         G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+    end,
+  check_for_unlock = function(self,args)
+    if args.type == "modify_jokers" then
+      local count = 0
+        for _, joker in ipairs(G.jokers.cards) do
+    if true then
+      count = count + 1
     end
+    end
+      if count >= to_big(9) then
+        return true
+      end
+  end
+  return false
+  end
 }
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space

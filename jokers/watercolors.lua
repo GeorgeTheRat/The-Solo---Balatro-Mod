@@ -1,31 +1,30 @@
-SMODS.Joker{ --Rotten Joker
-    key = "rottenjoker",
+SMODS.Joker{ --Watercolors
+    key = "watercolors",
     config = {
         extra = {
-            Xmult = 0.75,
-            dollars = 6
         }
     },
     loc_txt = {
-        ['name'] = 'Rotten Joker',
+        ['name'] = 'Watercolors',
         ['text'] = {
-            [1] = '{C:attention}Rotten Cards{} give {C:money}$6{}',
-            [2] = 'and {X:red,C:white}X0.75{} Mult when scored'
+            [1] = 'If {C:attention}first hand{} of round',
+            [2] = 'has exactly {C:attention}2{} cards,',
+            [3] = 'apply {C:edition}Holographic{} to them when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 0,
+        x = 7,
         y = 2
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 4,
-    rarity = 1,
+    cost = 6,
+    rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -35,13 +34,10 @@ SMODS.Joker{ --Rotten Joker
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-            if SMODS.get_enhancements(context.other_card)["m_solo_rotten"] == true then
+            if (#context.full_hand == 2 and G.GAME.current_round.hands_played == 0) then
+                context.other_card:set_edition("e_holo", true)
                 return {
-                    Xmult = card.ability.extra.Xmult,
-                    extra = {
-                        dollars = card.ability.extra.dollars,
-                        colour = G.C.MONEY
-                        }
+                    message = "Card Modified!"
                 }
             end
         end
