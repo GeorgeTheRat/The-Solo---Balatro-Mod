@@ -6,7 +6,7 @@ SMODS.Joker{ --Pumpkin Costume
             odds = 2,
             odds2 = 2,
             dollars = 10,
-            costume = 0,
+            costumes = 0,
             respect = 0
         }
     },
@@ -42,7 +42,7 @@ SMODS.Joker{ --Pumpkin Costume
 
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_solo_pumpkincostume') 
-        return {vars = {card.ability.extra.edititionion, card.ability.extra.costume, new_numerator, new_denominator}}
+        return {vars = {card.ability.extra.edititionion, card.ability.extra.costumes, new_numerator, new_denominator}}
     end,
 
     calculate = function(self, card, context)
@@ -77,7 +77,7 @@ SMODS.Joker{ --Pumpkin Costume
         G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'solo_costume' })
+                    local joker_card = SMODS.add_card({ set = 'solo_costumes' })
                     if joker_card then
                         
                         

@@ -7,7 +7,7 @@
   "description": "Vanilla balanced content made for people bored of exponentiation",
   "prefix": "solo",
   "main_file": "main.lua",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "priority": 27,
   "badge_colour": "4f6367",
   "badge_text_colour": "4f6367",
