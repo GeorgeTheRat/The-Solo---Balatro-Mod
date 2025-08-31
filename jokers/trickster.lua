@@ -14,7 +14,7 @@ SMODS.Joker{ --Trickster
         }
     },
     pos = {
-        x = 6,
+        x = 8,
         y = 2
     },
     display_size = {

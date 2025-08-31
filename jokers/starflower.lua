@@ -18,7 +18,7 @@ SMODS.Joker{ --Starflower
         }
     },
     pos = {
-        x = 2,
+        x = 4,
         y = 2
     },
     display_size = {
@@ -37,8 +37,8 @@ SMODS.Joker{ --Starflower
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round  then
             if context.other_card:is_suit("Diamonds") then
-                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_starflower') then
-                      SMODS.calculate_effect({func = function()local created_consumable = true
+                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_starflower', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = true
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         SMODS.add_card{set = 'Tarot', key = nil, edition = 'e_negative', key_append = 'joker_forge_tarot'}
@@ -50,7 +50,7 @@ SMODS.Joker{ --Starflower
                     end
                     return true
                 end}, card)
-                  end
+          end
             end
         end
     end

@@ -16,7 +16,7 @@ SMODS.Joker{ --Crayons
         }
     },
     pos = {
-        x = 8,
+        x = 7,
         y = 0
     },
     display_size = {
@@ -34,7 +34,7 @@ SMODS.Joker{ --Crayons
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-            if (#context.full_hand == 3 and G.GAME.current_round.hands_left == 1) then
+            if (#context.full_hand == 3 and G.GAME.current_round.hands_left == 0) then
                 context.other_card:set_edition("e_foil", true)
                 return {
                     message = "Card Modified!"

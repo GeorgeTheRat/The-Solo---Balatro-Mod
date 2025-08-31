@@ -17,7 +17,7 @@ SMODS.Joker{ --Orchid
         }
     },
     pos = {
-        x = 4,
+        x = 5,
         y = 1
     },
     display_size = {
@@ -36,8 +36,8 @@ SMODS.Joker{ --Orchid
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round  then
             if context.other_card:is_suit("Clubs") then
-                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_orchid') then
-                      SMODS.calculate_effect({func = function()
+                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_orchid', false) then
+              SMODS.calculate_effect({func = function()
             G.E_MANAGER:add_event(Event({
                 func = function()
                     local selected_tag = pseudorandom_element(G.P_TAGS, pseudoseed("create_tag")).key
@@ -60,7 +60,7 @@ SMODS.Joker{ --Orchid
                     return true
                 end}, card)
                         card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Created Tag!", colour = G.C.GREEN})
-                  end
+          end
             end
         end
     end

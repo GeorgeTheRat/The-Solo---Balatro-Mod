@@ -8,7 +8,7 @@ SMODS.Joker{ --Chocolate Strawberry
     loc_txt = {
         ['name'] = 'Chocolate Strawberry',
         ['text'] = {
-            [1] = '{C:attention}#1# {}{C:attention}Joker Slots{} while in a {C:attention}Blind{}{}',
+            [1] = '{C:attention}+#1# {}{C:attention}Joker Slots{} while in a {C:attention}Blind{}{}',
             [2] = 'Decreases by {C:attention}1{} at end of round'
         },
         ['unlock'] = {

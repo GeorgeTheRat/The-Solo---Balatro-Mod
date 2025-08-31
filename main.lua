@@ -101,3 +101,27 @@ SMODS.ObjectType({
         ["j_selzer"] = true
     },
 })
+
+SMODS.ObjectType({
+    key = "solo_costumes",
+    cards = {
+        ["j_solo_ghostcostume"] = true,
+        ["j_solo_monstercostume"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "solo_costumes2",
+    cards = {
+        ["j_solo_ghostcostume"] = true,
+        ["j_solo_pumpkincostume"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "solo_costumes1",
+    cards = {
+        ["j_solo_monstercostume"] = true,
+        ["j_solo_pumpkincostume"] = true
+    },
+})

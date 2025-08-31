@@ -16,7 +16,7 @@ SMODS.Joker{ --Watercolors
         }
     },
     pos = {
-        x = 7,
+        x = 9,
         y = 2
     },
     display_size = {
@@ -34,7 +34,7 @@ SMODS.Joker{ --Watercolors
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-            if (#context.full_hand == 2 and G.GAME.current_round.hands_played == 0) then
+            if (#context.full_hand == 2 and G.GAME.current_round.hands_left == 0) then
                 context.other_card:set_edition("e_holo", true)
                 return {
                     message = "Card Modified!"

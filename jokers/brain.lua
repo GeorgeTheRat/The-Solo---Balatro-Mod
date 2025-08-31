@@ -12,9 +12,9 @@ SMODS.Joker{ --Brain
         ['text'] = {
             [1] = '{C:red}+#1# {}Mult',
             [2] = 'Whenever a hand is played,',
-            [3] = '{C:green}#3# in #4# {}chance to increase',
-            [4] = 'this by {C:attention}#2# {}and further increase',
-            [5] = 'the increment by {C:attention}1{}'
+            [3] = '{C:green}#3# in #4# {}chance for this Joker to',
+            [4] = 'gain {C:red}+#2# {}Mult and further increase',
+            [5] = 'the Mult increment by {C:attention}1{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -49,12 +49,12 @@ SMODS.Joker{ --Brain
                     mult = card.ability.extra.mult1
                 ,
                     func = function()
-                        if SMODS.pseudorandom_probability(card, 'group_0_735ee1a4', 1, card.ability.extra.odds, 'j_solo_brain') then
-                      local mult2_value = card.ability.extra.mult2
+                        if SMODS.pseudorandom_probability(card, 'group_0_735ee1a4', 1, card.ability.extra.odds, 'j_solo_brain', false) then
+              local mult2_value = card.ability.extra.mult2
                         card.ability.extra.mult1 = (card.ability.extra.mult1) + card.ability.extra.mult2
                         card.ability.extra.mult2 = (card.ability.extra.mult2) + 1
                         
-                  end
+          end
                         return true
                     end
                 }

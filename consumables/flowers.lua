@@ -38,7 +38,7 @@ SMODS.Consumable {
                 
                 pseudoshuffle(temp_jokers, 98765)
                 
-                for i = 1, math.min(card.ability.extra.destroy_joker_amount, #temp_jokers) do
+                for i = 1, math.min(1, #temp_jokers) do
                     jokers_to_destroy[#jokers_to_destroy + 1] = temp_jokers[i]
                 end
             end

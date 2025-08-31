@@ -31,7 +31,7 @@ SMODS.Joker{ --Topiary
         }
     },
     pos = {
-        x = 4,
+        x = 6,
         y = 2
     },
     display_size = {
@@ -50,8 +50,8 @@ SMODS.Joker{ --Topiary
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round  then
             if (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 1) then
-                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -72,10 +72,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 2) then
-                if SMODS.pseudorandom_probability(card, 'group_0_a631b366', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_a631b366', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -96,10 +96,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 3) then
-                if SMODS.pseudorandom_probability(card, 'group_0_f402dba8', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_f402dba8', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -120,10 +120,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 4) then
-                if SMODS.pseudorandom_probability(card, 'group_0_b71815f3', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_b71815f3', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -144,10 +144,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 5) then
-                if SMODS.pseudorandom_probability(card, 'group_0_8c0f70f1', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_8c0f70f1', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -168,10 +168,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 6) then
-                if SMODS.pseudorandom_probability(card, 'group_0_dd8dc180', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_dd8dc180', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -192,10 +192,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 7) then
-                if SMODS.pseudorandom_probability(card, 'group_0_24049920', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_24049920', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -216,10 +216,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 8) then
-                if SMODS.pseudorandom_probability(card, 'group_0_0a4e793f', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_0a4e793f', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -240,10 +240,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 9) then
-                if SMODS.pseudorandom_probability(card, 'group_0_f0987577', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_f0987577', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -264,10 +264,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 10) then
-                if SMODS.pseudorandom_probability(card, 'group_0_9bc243c2', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_9bc243c2', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -288,10 +288,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 11) then
-                if SMODS.pseudorandom_probability(card, 'group_0_96efabb7', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_96efabb7', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -312,10 +312,10 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             elseif (context.other_card:is_suit("Clubs") and (card.ability.extra.pants or 0) == 12) then
-                if SMODS.pseudorandom_probability(card, 'group_0_0979b816', 1, card.ability.extra.odds, 'j_solo_topiary') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_0979b816', 1, card.ability.extra.odds, 'j_solo_topiary', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -336,7 +336,7 @@ SMODS.Joker{ --Topiary
                     card.ability.extra.pants = (card.ability.extra.pants) + 1
                     return true
                 end}, card)
-                  end
+          end
             end
         end
     end

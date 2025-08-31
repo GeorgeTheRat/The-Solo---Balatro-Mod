@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'snake',
     set = 'lenormand',
-    pos = { x = 8, y = 1 },
+    pos = { x = 9, y = 1 },
     config = { extra = {
         destroy_count = 100,
         odds = 4,
@@ -27,7 +27,8 @@ SMODS.Consumable {
     use = function(self, card, area, copier)
         local used_card = copier or card
         if G.GAME.blind.in_blind then
-            if SMODS.pseudorandom_probability(card, 'group_0_73c8c8de', 1, card.ability.extra.odds, 'c_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_0_73c8c8de', 1, card.ability.extra.odds, 'c_solo_snake', false) then
+                
                 local jokers_to_destroy = {}
             local deletable_jokers = {}
             
@@ -45,7 +46,7 @@ SMODS.Consumable {
                 
                 pseudoshuffle(temp_jokers, 98765)
                 
-                for i = 1, math.min(card.ability.extra.destroy_joker_amount, #temp_jokers) do
+                for i = 1, math.min(1, #temp_jokers) do
                     jokers_to_destroy[#jokers_to_destroy + 1] = temp_jokers[i]
                 end
             end

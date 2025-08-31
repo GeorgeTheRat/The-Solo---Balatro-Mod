@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'stork',
     set = 'lenormand',
-    pos = { x = 9, y = 1 },
+    pos = { x = 0, y = 2 },
     config = { extra = {
         consumablesheld = 0
     } },

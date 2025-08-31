@@ -17,7 +17,7 @@ SMODS.Joker{ --Elites
         }
     },
     pos = {
-        x = 9,
+        x = 8,
         y = 0
     },
     display_size = {

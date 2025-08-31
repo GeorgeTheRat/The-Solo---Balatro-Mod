@@ -29,22 +29,23 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     loc_vars = function(self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'm_solo_doodle')
         return {vars = {numerator, denominator}}
     end,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
-            if SMODS.pseudorandom_probability(card, 'group_0_40a45d4f', 1, card.ability.extra.odds, 'm_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_0_40a45d4f', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
                 SMODS.calculate_effect({mult = card.ability.extra.mult}, card)
             end
-            if SMODS.pseudorandom_probability(card, 'group_1_301a7a09', 1, card.ability.extra.odds, 'm_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_1_301a7a09', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
                 SMODS.calculate_effect({x_mult = card.ability.extra.x_mult}, card)
             end
-            if SMODS.pseudorandom_probability(card, 'group_2_8df4a760', 1, card.ability.extra.odds, 'm_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_2_8df4a760', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
                 SMODS.calculate_effect({chips = card.ability.extra.chips}, card)
             end
-            if SMODS.pseudorandom_probability(card, 'group_3_51890883', 1, card.ability.extra.odds, 'm_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_3_51890883', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
                 SMODS.calculate_effect({dollars = lenient_bignum(card.ability.extra.dollars)}, card)
             end
         end

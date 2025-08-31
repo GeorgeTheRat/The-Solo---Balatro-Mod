@@ -26,6 +26,7 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     loc_vars = function(self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'm_solo_vine')
         return {vars = {((G.consumeables and G.consumeables.config.card_limit or 0 - #(G.consumeables and G.consumeables.cards or {})) or 0), numerator, denominator}}
@@ -38,7 +39,7 @@ SMODS.Enhancement {
             card.should_retrigger = false
             card.should_retrigger = true
             card.ability.extra.retrigger_times = (G.consumeables and G.consumeables.config.card_limit or 0 - #(G.consumeables and G.consumeables.cards or {}))
-            if SMODS.pseudorandom_probability(card, 'group_0_e03c7077', 1, card.ability.extra.odds, 'm_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_0_e03c7077', 1, card.ability.extra.odds, 'm_solo_vine', false) then
                 card:set_ability(G.P_CENTERS.m_solo_overgrowncard)
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Card Modified!", colour = G.C.BLUE})
             end

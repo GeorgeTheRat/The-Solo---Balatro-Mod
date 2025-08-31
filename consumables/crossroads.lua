@@ -9,9 +9,9 @@ SMODS.Consumable {
     loc_txt = {
         name = 'Crossroads',
         text = {
-        [1] = 'Select one card,',
+        [1] = 'Select {C:attention}1{} card,',
         [2] = '{C:green}#1# in #2#{} chance to {C:red}destroy{}',
-        [3] = 'it and {C:green}#1# in #2#{} chance to',
+        [3] = 'it, otherwise {C:green}#1# in #2#{} chance to',
         [4] = 'create {C:attention}3{} copies of it'
     }
     },
@@ -28,7 +28,8 @@ SMODS.Consumable {
     use = function(self, card, area, copier)
         local used_card = copier or card
         if #G.hand.highlighted == 1 then
-            if SMODS.pseudorandom_probability(card, 'group_0_f6bf59f6', 1, card.ability.extra.odds, 'c_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_0_f6bf59f6', 1, card.ability.extra.odds, 'c_solo_crossroads', false) then
+                
                 G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
@@ -48,7 +49,8 @@ SMODS.Consumable {
             }))
             delay(0.3)
             end
-            if SMODS.pseudorandom_probability(card, 'group_1_9857b26b', 1, card.ability.extra.odds, 'c_solo') then
+            if SMODS.pseudorandom_probability(card, 'group_1_9857b26b', 1, card.ability.extra.odds, 'c_solo_crossroads', false) then
+                
                 G.E_MANAGER:add_event(Event({
                 func = function()
                     local _first_materialize = nil

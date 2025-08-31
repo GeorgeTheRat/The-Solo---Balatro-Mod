@@ -23,6 +23,7 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     calculate = function(self, card, context)
         if context.discard and context.other_card == card then
             local target_hand

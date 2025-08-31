@@ -1,11 +1,12 @@
 SMODS.Consumable {
-    key = 'lily',
+    key = 'garden',
     set = 'lenormand',
-    pos = { x = 3, y = 1 },
+    pos = { x = 9, y = 0 },
     loc_txt = {
-        name = 'Lily',
+        name = 'Garden',
         text = {
-        [1] = 'Create a {C:attention}Coupon Tag{} and a {C:attention}D6 Tag{}'
+        [1] = 'Create {C:attention}1{} random {C:attention}Tag{}',
+        [2] = 'for every {C:attention}blind{} {C:attention}skipped{} this run, up to {C:attention}10{}'
     }
     },
     cost = 4,
@@ -18,25 +19,8 @@ SMODS.Consumable {
         local used_card = copier or card
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local tag = Tag("tag_d_six")
-                    if tag.name == "Orbital Tag" then
-                        local _poker_hands = {}
-                        for k, v in pairs(G.GAME.hands) do
-                            if v.visible then
-                                _poker_hands[#_poker_hands + 1] = k
-                            end
-                        end
-                        tag.ability.orbital_hand = pseudorandom_element(_poker_hands, "jokerforge_orbital")
-                    end
-                    tag:set_ability()
-                    add_tag(tag)
-                    play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
-                    return true
-                end
-            }))
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    local tag = Tag("tag_coupon")
+                    local selected_tag = pseudorandom_element(G.P_TAGS, pseudoseed("create_tag")).key
+                    local tag = Tag(selected_tag)
                     if tag.name == "Orbital Tag" then
                         local _poker_hands = {}
                         for k, v in pairs(G.GAME.hands) do

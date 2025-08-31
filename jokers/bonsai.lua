@@ -37,8 +37,8 @@ SMODS.Joker{ --Bonsai
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round  then
             if context.other_card:is_suit("Hearts") then
-                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_bonsai') then
-                      SMODS.calculate_effect({func = function()local created_consumable = false
+                if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_bonsai', false) then
+              SMODS.calculate_effect({func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     created_consumable = true
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
@@ -55,7 +55,7 @@ SMODS.Joker{ --Bonsai
                     end
                     return true
                 end}, card)
-                  end
+          end
             end
         end
     end

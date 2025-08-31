@@ -10,7 +10,8 @@ SMODS.Joker{ --Go Fish
         ['text'] = {
             [1] = 'Whenever a {C:attention}5{} card hand',
             [2] = 'is played that has no {C:attention}#1#{}',
-            [3] = 'or {C:attention}#2#{}, draw {C:attention}6{} cards to hand'
+            [3] = 'or {C:attention}#2#{}, draw {C:attention}6{} cards to hand',
+            [4] = '{C:attention}Ranks{} change at end of round'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'

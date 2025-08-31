@@ -14,6 +14,7 @@ SMODS.ConsumableType {
         ['c_solo_crossroads'] = true,
         ['c_solo_fish'] = true,
         ['c_solo_flowers'] = true,
+        ['c_solo_garden'] = true,
         ['c_solo_key'] = true,
         ['c_solo_lady'] = true,
         ['c_solo_letter'] = true,

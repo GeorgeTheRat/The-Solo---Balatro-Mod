@@ -23,6 +23,7 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             return { x_mult = card.ability.extra.x_mult, dollars = -lenient_bignum(card.ability.extra.dollars) }

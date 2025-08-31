@@ -2,23 +2,21 @@ SMODS.Joker{ --Toy Car
     key = "toycar",
     config = {
         extra = {
-            moneyvar = 1,
-            basehandsperround = -1
+            moneyvar = 1
         }
     },
     loc_txt = {
         ['name'] = 'Toy Car',
         ['text'] = {
             [1] = 'Earn {C:attention}$#1# {}when {C:attention}Blind{} is skipped',
-            [2] = 'Increases by {C:attention}$3{} when a',
-            [3] = '{C:attention}Blind{} is beaten in {C:attention}1{} {C:blue}hand{}'
+            [2] = 'Increases by {C:attention}$2{} at end of round'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 5,
+        x = 7,
         y = 2
     },
     display_size = {
@@ -40,14 +38,12 @@ SMODS.Joker{ --Toy Car
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval  and not context.blueprint then
-            if G.GAME.current_round.hands_left == card.ability.extra.basehandsperround + (G.GAME.round_resets.hands) then
                 return {
                     func = function()
-                    card.ability.extra.moneyvar = (card.ability.extra.moneyvar) + 3
+                    card.ability.extra.moneyvar = (card.ability.extra.moneyvar) + 2
                     return true
                 end
                 }
-            end
         end
         if context.skip_blind  then
                 return {
