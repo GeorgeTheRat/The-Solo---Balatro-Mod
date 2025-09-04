@@ -21,7 +21,7 @@ SMODS.Joker{ --Tamago
         }
     },
     pos = {
-        x = 1,
+        x = 2,
         y = 3
     },
     display_size = {
@@ -31,11 +31,12 @@ SMODS.Joker{ --Tamago
     cost = 4,
     rarity = 1,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["solo_sushi"] = true },
 
     calculate = function(self, card, context)
         if context.selling_self  then

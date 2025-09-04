@@ -19,7 +19,7 @@ SMODS.Joker{ --Maki Roll
         }
     },
     pos = {
-        x = 7,
+        x = 8,
         y = 1
     },
     display_size = {
@@ -29,7 +29,7 @@ SMODS.Joker{ --Maki Roll
     cost = 6,
     rarity = 2,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
     discovered = true,

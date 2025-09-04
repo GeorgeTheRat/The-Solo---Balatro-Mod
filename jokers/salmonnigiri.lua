@@ -20,7 +20,7 @@ SMODS.Joker{ --Salmon Nigiri
         }
     },
     pos = {
-        x = 8,
+        x = 9,
         y = 2
     },
     display_size = {
@@ -30,11 +30,12 @@ SMODS.Joker{ --Salmon Nigiri
     cost = 4,
     rarity = 1,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["solo_sushi"] = true },
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.ah}}

@@ -27,11 +27,12 @@ SMODS.Joker{ --Garlic
     cost = 5,
     rarity = 2,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["solo_food"] = true },
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.gargle}}
