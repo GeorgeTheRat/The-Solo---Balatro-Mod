@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'snake',
     set = 'lenormand',
-    pos = { x = 8, y = 1 },
+    pos = { x = 2, y = 2 },
     config = { extra = {
         destroy_count = 100,
         odds = 4,

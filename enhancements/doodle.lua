@@ -36,16 +36,16 @@ SMODS.Enhancement {
     end,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
-            if SMODS.pseudorandom_probability(card, 'group_0_40a45d4f', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
+            if SMODS.pseudorandom_probability(card, 'group_0_40a45d4f', 1, card.ability.extra.odds, 'm_solo_doodle') then
                 SMODS.calculate_effect({mult = card.ability.extra.mult}, card)
             end
-            if SMODS.pseudorandom_probability(card, 'group_1_301a7a09', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
+            if SMODS.pseudorandom_probability(card, 'group_1_301a7a09', 1, card.ability.extra.odds, 'm_solo_doodle') then
                 SMODS.calculate_effect({x_mult = card.ability.extra.x_mult}, card)
             end
-            if SMODS.pseudorandom_probability(card, 'group_2_8df4a760', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
+            if SMODS.pseudorandom_probability(card, 'group_2_8df4a760', 1, card.ability.extra.odds, 'm_solo_doodle') then
                 SMODS.calculate_effect({chips = card.ability.extra.chips}, card)
             end
-            if SMODS.pseudorandom_probability(card, 'group_3_51890883', 1, card.ability.extra.odds, 'm_solo_doodle', false) then
+            if SMODS.pseudorandom_probability(card, 'group_3_51890883', 1, card.ability.extra.odds, 'm_solo_doodle') then
                 SMODS.calculate_effect({dollars = lenient_bignum(card.ability.extra.dollars)}, card)
             end
         end

@@ -17,8 +17,8 @@ SMODS.Joker{ --Polished Joker
         }
     },
     pos = {
-        x = 8,
-        y = 1
+        x = 3,
+        y = 2
     },
     display_size = {
         w = 71 * 1, 

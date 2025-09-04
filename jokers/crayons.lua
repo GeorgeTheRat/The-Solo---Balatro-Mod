@@ -7,7 +7,7 @@ SMODS.Joker{ --Crayons
     loc_txt = {
         ['name'] = 'Crayons',
         ['text'] = {
-            [1] = 'If {C:attention}second to last hand{}',
+            [1] = 'If {C:attention}last hand{}',
             [2] = 'of round has exactly {C:attention}3{}',
             [3] = 'cards, apply {C:edition}Foil{} to them when scored'
         },
@@ -16,7 +16,7 @@ SMODS.Joker{ --Crayons
         }
     },
     pos = {
-        x = 7,
+        x = 9,
         y = 0
     },
     display_size = {

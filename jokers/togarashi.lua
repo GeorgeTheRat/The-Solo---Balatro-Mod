@@ -19,8 +19,8 @@ SMODS.Joker{ --Togarashi
         }
     },
     pos = {
-        x = 5,
-        y = 2
+        x = 2,
+        y = 3
     },
     display_size = {
         w = 71 * 1, 

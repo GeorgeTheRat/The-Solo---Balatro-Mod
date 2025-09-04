@@ -39,7 +39,7 @@ SMODS.Enhancement {
             card.should_retrigger = false
             card.should_retrigger = true
             card.ability.extra.retrigger_times = (G.consumeables and G.consumeables.config.card_limit or 0 - #(G.consumeables and G.consumeables.cards or {}))
-            if SMODS.pseudorandom_probability(card, 'group_0_e03c7077', 1, card.ability.extra.odds, 'm_solo_vine', false) then
+            if SMODS.pseudorandom_probability(card, 'group_0_e03c7077', 1, card.ability.extra.odds, 'm_solo_vine') then
                 card:set_ability(G.P_CENTERS.m_solo_overgrowncard)
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Card Modified!", colour = G.C.BLUE})
             end

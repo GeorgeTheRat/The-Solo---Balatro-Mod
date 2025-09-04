@@ -103,6 +103,14 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType({
+    key = "solo_sushi",
+    cards = {
+        ["j_solo_californiaroll"] = true,
+        ["j_solo_makiroll"] = true
+    },
+})
+
+SMODS.ObjectType({
     key = "solo_costumes",
     cards = {
         ["j_solo_ghostcostume"] = true,

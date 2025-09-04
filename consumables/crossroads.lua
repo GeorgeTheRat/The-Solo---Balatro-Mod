@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'crossroads',
     set = 'lenormand',
-    pos = { x = 6, y = 0 },
+    pos = { x = 7, y = 0 },
     config = { extra = {
         odds = 2,
         copy_cards_amount = 3

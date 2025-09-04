@@ -15,7 +15,7 @@ SMODS.Joker{ --Conman
         }
     },
     pos = {
-        x = 6,
+        x = 8,
         y = 0
     },
     display_size = {

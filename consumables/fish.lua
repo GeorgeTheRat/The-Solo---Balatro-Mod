@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'fish',
     set = 'lenormand',
-    pos = { x = 7, y = 0 },
+    pos = { x = 8, y = 0 },
     config = { extra = {
         foilcardsindeck = 0,
         holographiccardsindeck = 0,

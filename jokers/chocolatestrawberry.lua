@@ -16,7 +16,7 @@ SMODS.Joker{ --Chocolate Strawberry
         }
     },
     pos = {
-        x = 4,
+        x = 6,
         y = 0
     },
     display_size = {

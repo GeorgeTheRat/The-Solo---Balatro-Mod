@@ -18,7 +18,7 @@ SMODS.Joker{ --Bonsai
         }
     },
     pos = {
-        x = 2,
+        x = 3,
         y = 0
     },
     display_size = {

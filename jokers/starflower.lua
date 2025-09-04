@@ -18,8 +18,8 @@ SMODS.Joker{ --Starflower
         }
     },
     pos = {
-        x = 4,
-        y = 2
+        x = 0,
+        y = 3
     },
     display_size = {
         w = 71 * 1, 

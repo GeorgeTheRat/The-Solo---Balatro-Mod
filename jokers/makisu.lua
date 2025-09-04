@@ -1,21 +1,22 @@
-SMODS.Joker{ --Figure 1
-    key = "figure1",
+SMODS.Joker{ --Makisu
+    key = "makisu",
     config = {
         extra = {
         }
     },
     loc_txt = {
-        ['name'] = 'Figure 1',
+        ['name'] = 'Makisu',
         ['text'] = {
-            [1] = 'Played {C:attention}Literature Cards{} also give',
-            [2] = 'their Chips when scored'
+            [1] = 'Create a random {C:attention}Sushi Joker{}',
+            [2] = 'when a consumable is used during {C:attention}Blind{}',
+            [3] = '{C:inactive}(Must have room){}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 1,
+        x = 8,
         y = 1
     },
     display_size = {

@@ -1,11 +1,11 @@
 SMODS.Consumable {
-    key = 'moon',
+    key = 'house',
     set = 'lenormand',
-    pos = { x = 8, y = 1 },
+    pos = { x = 2, y = 1 },
     loc_txt = {
-        name = 'Moon',
+        name = 'House',
         text = {
-        [1] = 'Enhances up to {C:attention}2{} selected cards into {C:attention}Old Cards{}'
+        [1] = 'Apply {C:attention}Foil{} to up to {C:attention}2{} selected cards'
     }
     },
     cost = 4,
@@ -16,7 +16,7 @@ SMODS.Consumable {
     atlas = 'CustomConsumables',
     use = function(self, card, area, copier)
         local used_card = copier or card
-        if #G.hand.highlighted <= 2 then
+        if (#G.hand.highlighted == 1 or #G.hand.highlighted == 2) then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
@@ -45,7 +45,7 @@ SMODS.Consumable {
                     trigger = 'after',
                     delay = 0.1,
                     func = function()
-                        G.hand.highlighted[i]:set_ability(G.P_CENTERS['m_solo_old'])
+                        G.hand.highlighted[i]:set_edition({ foil = true }, true)
                         return true
                     end
                 }))
@@ -75,6 +75,6 @@ SMODS.Consumable {
         end
     end,
     can_use = function(self, card)
-        return (#G.hand.highlighted <= 2)
+        return ((#G.hand.highlighted == 1 or #G.hand.highlighted == 2))
     end
 }

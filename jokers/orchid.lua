@@ -17,8 +17,8 @@ SMODS.Joker{ --Orchid
         }
     },
     pos = {
-        x = 5,
-        y = 1
+        x = 0,
+        y = 2
     },
     display_size = {
         w = 71 * 1, 
@@ -35,7 +35,7 @@ SMODS.Joker{ --Orchid
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round  then
-            if context.other_card:is_suit("Clubs") then
+            if context.other_card:is_suit("Spades") then
                 if SMODS.pseudorandom_probability(card, 'group_0_9630fc7a', 1, card.ability.extra.odds, 'j_solo_orchid', false) then
               SMODS.calculate_effect({func = function()
             G.E_MANAGER:add_event(Event({

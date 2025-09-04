@@ -1,30 +1,30 @@
-SMODS.Joker{ --Elites
-    key = "elites",
+SMODS.Joker{ --Bento Box
+    key = "bentobox",
     config = {
         extra = {
-            respect = 0
+            sushi = 0,
+            ignore = 0
         }
     },
     loc_txt = {
-        ['name'] = 'Elites',
+        ['name'] = 'Bento Box',
         ['text'] = {
-            [1] = 'Creates a random {C:rare}Rare{} {C:attention}Joker{}',
-            [2] = 'when {C:attention}Boss Blind{} is selected',
-            [3] = '{C:inactive}(Must have room){}'
+            [1] = 'When a {C:attention}Joker{} is sold create a {C:attention}2 {}random {C:attention}Sushi',
+            [2] = 'Jokers{} with Negative and {C:red}destroy{} this Joker'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 0,
-        y = 1
+        x = 2,
+        y = 0
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 6,
+    cost = 5,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
@@ -34,33 +34,28 @@ SMODS.Joker{ --Elites
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.setting_blind  then
-            if G.GAME.blind.boss then
+        if context.selling_card  then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Rare' })
+                    local joker_card = SMODS.add_card({ set = 'solo_sushi' })
                     if joker_card then
-                        
+                        joker_card:set_edition("e_negative", true)
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
             return true
         end
                 }
-            end
         end
     end
 }

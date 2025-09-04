@@ -26,7 +26,7 @@ SMODS.Joker{ --Ghost Costume
         }
     },
     pos = {
-        x = 1,
+        x = 4,
         y = 1
     },
     display_size = {

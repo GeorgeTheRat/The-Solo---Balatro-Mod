@@ -19,7 +19,7 @@ SMODS.Joker{ --Good Fortune
         }
     },
     pos = {
-        x = 3,
+        x = 6,
         y = 1
     },
     display_size = {

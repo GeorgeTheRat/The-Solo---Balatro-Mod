@@ -17,7 +17,7 @@ SMODS.Joker{ --Waterfall
         }
     },
     pos = {
-        x = 0,
+        x = 7,
         y = 3
     },
     display_size = {

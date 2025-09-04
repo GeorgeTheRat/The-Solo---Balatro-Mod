@@ -18,7 +18,7 @@ SMODS.Joker{ --Go Fish
         }
     },
     pos = {
-        x = 2,
+        x = 5,
         y = 1
     },
     display_size = {
