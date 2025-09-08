@@ -30,7 +30,7 @@ SMODS.Joker{ --Tako Nigiri
     cost = 8,
     rarity = 3,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
