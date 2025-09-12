@@ -5,7 +5,9 @@ SMODS.Joker{ --Hand Roll
             all = 4,
             handys = 0,
             handsremaining = 0,
-            round = 0
+            round = 0,
+            start_dissolve = 0,
+            y = 0
         }
     },
     loc_txt = {
@@ -20,8 +22,8 @@ SMODS.Joker{ --Hand Roll
         }
     },
     pos = {
-        x = 7,
-        y = 1
+        x = 1,
+        y = 2
     },
     display_size = {
         w = 71 * 1, 
@@ -57,7 +59,7 @@ SMODS.Joker{ --Hand Roll
                 card:start_dissolve()
                 return true
             end,
-                    message = "Destroyed!"
+                    message = "Eaten!"
                 }
             else
                 local handys_value = card.ability.extra.handys

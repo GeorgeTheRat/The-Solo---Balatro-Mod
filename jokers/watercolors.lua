@@ -7,7 +7,7 @@ SMODS.Joker{ --Watercolors
     loc_txt = {
         ['name'] = 'Watercolors',
         ['text'] = {
-            [1] = 'If {C:attention}first hand{} of round',
+            [1] = 'If {C:attention}last hand{} of round',
             [2] = 'has exactly {C:attention}2{} cards,',
             [3] = 'apply {C:edition}Holographic{} to them when scored'
         },
@@ -16,8 +16,8 @@ SMODS.Joker{ --Watercolors
         }
     },
     pos = {
-        x = 8,
-        y = 3
+        x = 5,
+        y = 4
     },
     display_size = {
         w = 71 * 1, 

@@ -16,7 +16,7 @@ SMODS.Joker{ --Chocolate Strawberry
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 0
     },
     display_size = {
@@ -42,10 +42,9 @@ SMODS.Joker{ --Chocolate Strawberry
             if (card.ability.extra.banana or 0) <= 0 then
                 return {
                     func = function()
-                card:start_dissolve()
+                card:undefined()
                 return true
-            end,
-                    message = "Destroyed!"
+            end
                 }
             else
                 return {

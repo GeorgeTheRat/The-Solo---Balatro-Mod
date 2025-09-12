@@ -14,8 +14,7 @@ SMODS.Joker{ --Topiary
             odds9 = 10,
             odds10 = 10,
             odds11 = 10,
-            odds12 = 10,
-            Planet = 0
+            odds12 = 10
         }
     },
     loc_txt = {
@@ -31,8 +30,8 @@ SMODS.Joker{ --Topiary
         }
     },
     pos = {
-        x = 5,
-        y = 3
+        x = 2,
+        y = 4
     },
     display_size = {
         w = 71 * 1, 
@@ -57,7 +56,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_pluto', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_pluto', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -81,7 +80,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_mercury', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_mercury', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -105,7 +104,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_uranus', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_uranus', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -129,7 +128,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_venus', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_venus', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -153,7 +152,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_saturn', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_saturn', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -177,7 +176,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_jupiter', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_jupiter', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -201,7 +200,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_earth', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_earth', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -225,7 +224,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_mars', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_mars', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -249,7 +248,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_neptune', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_neptune', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -273,7 +272,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_planet_x', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_planet_x', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -297,7 +296,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_ceres', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_ceres', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -321,7 +320,7 @@ SMODS.Joker{ --Topiary
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Planet', key = 'c_eris', key_append = 'joker_forge_planet'}
+                            SMODS.add_card{set = 'Planet', soulable = undefined, key = 'c_eris', key_append = 'joker_forge_planet'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end

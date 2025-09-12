@@ -15,7 +15,7 @@ SMODS.Joker{ --Conman
         }
     },
     pos = {
-        x = 8,
+        x = 9,
         y = 0
     },
     display_size = {
@@ -37,10 +37,9 @@ SMODS.Joker{ --Conman
                     dollars = card.ability.extra.dollars,
                     extra = {
                         func = function()
-                card:start_dissolve()
+                card:undefined()
                 return true
             end,
-                            message = "Scammed!",
                         colour = G.C.RED
                         }
                 }

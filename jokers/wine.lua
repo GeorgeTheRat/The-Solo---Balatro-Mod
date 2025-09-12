@@ -16,7 +16,7 @@ SMODS.Joker{ --Wine
         }
     },
     pos = {
-        x = 0,
+        x = 7,
         y = 4
     },
     display_size = {
@@ -100,4 +100,14 @@ G.FUNCS.check_for_buy_space = function(card)
         return true
     end
     return check_for_buy_space_ref(card)
+end
+
+local can_select_card_ref = G.FUNCS.can_select_card
+G.FUNCS.can_select_card = function(e)
+	if e.config.ref_table.config.center.key == "j_solo_wine" then
+		e.config.colour = G.C.GREEN
+		e.config.button = "use_card"
+	else
+		can_select_card_ref(e)
+	end
 end

@@ -4,7 +4,9 @@ SMODS.Joker{ --Salmon Nigiri
         extra = {
             ah = 12,
             pb_h_mult_1e7fdaf6 = 1,
-            perma_h_mult = 0
+            perma_h_mult = 0,
+            explode = 0,
+            y = 0
         }
     },
     loc_txt = {
@@ -13,15 +15,15 @@ SMODS.Joker{ --Salmon Nigiri
             [1] = '{C:red}+#1# {}Mult, decreases by {C:attention}1{}',
             [2] = 'when a card is scored,',
             [3] = 'all cards permanently gain',
-            [4] = '{C:red}+1{} Bonus held in hand Mult when scored'
+            [4] = '{C:red}+1{} Bonus {C:attention}held in hand{} Mult when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 9,
-        y = 2
+        x = 5,
+        y = 3
     },
     display_size = {
         w = 71 * 1, 
@@ -43,18 +45,20 @@ SMODS.Joker{ --Salmon Nigiri
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
+            if (card.ability.extra.ah or 0) ~= 0 then
                 return {
                     mult = card.ability.extra.ah
                 }
+            end
         end
         if context.individual and context.cardarea == G.play  then
-            if (card.ability.extra.ah or 0) == 0 then
+            if (card.ability.extra.ah or 0) <= 0 then
                 return {
                     func = function()
-                card:start_dissolve()
+                card:explode()
                 return true
             end,
-                    message = "Destroyed!"
+                    message = "Eaten!"
                 }
             else
                 context.other_card.ability.perma_h_mult = context.other_card.ability.perma_h_mult or 0

@@ -5,24 +5,26 @@ SMODS.Joker{ --Tobiko
             chip = 50,
             mults = 10,
             multsextra = 1.5,
-            depender = 1,
-            respect = 0
+            depender = 0,
+            respect = 0,
+            start_dissolve = 0,
+            y = 0
         }
     },
     loc_txt = {
         ['name'] = 'Tobiko',
         ['text'] = {
             [1] = '{C:blue}+#1#{} chips, {C:red}+#2#{} mult, {X:red,C:white}X#3#{} Mult',
-            [2] = 'At end of round, {C:red}lose{} a random benefit and',
-            [3] = 'create a random {C:attention}Common{} {C:attention}Joker{} with the corresponding {C:edition}edition{}'
+            [2] = 'At end of round, {C:red}lose{} the next benefit and',
+            [3] = 'create a random {C:attention}Joker{} with the corresponding {C:edition}edition{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 3,
-        y = 3
+        x = 0,
+        y = 4
     },
     display_size = {
         w = 71 * 1, 
@@ -69,7 +71,7 @@ SMODS.Joker{ --Tobiko
         G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Common' })
+                    local joker_card = SMODS.add_card({ set = 'Joker' })
                     if joker_card then
                         joker_card:set_edition("e_foil", true)
                         
@@ -101,7 +103,7 @@ SMODS.Joker{ --Tobiko
         G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Common' })
+                    local joker_card = SMODS.add_card({ set = 'Joker' })
                     if joker_card then
                         joker_card:set_edition("e_holo", true)
                         
@@ -133,7 +135,7 @@ SMODS.Joker{ --Tobiko
         G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Common' })
+                    local joker_card = SMODS.add_card({ set = 'Joker' })
                     if joker_card then
                         joker_card:set_edition("e_polychrome", true)
                         
@@ -148,21 +150,21 @@ SMODS.Joker{ --Tobiko
             end
             return true
         end,
-                        colour = G.C.BLUE
-                        }
-                }
-            elseif ((card.ability.extra.chip or 0) == 0 and (card.ability.extra.mults or 0) == 0 and (card.ability.extra.multsextra or 0) == 1) then
-                return {
-                    func = function()
+                        colour = G.C.BLUE,
+                        extra = {
+                            func = function()
                 card:start_dissolve()
                 return true
             end,
-                    message = "Destroyed!"
+                            message = "Eaten!",
+                            colour = G.C.RED
+                        }
+                        }
                 }
             else
                 return {
                     func = function()
-                    card.ability.extra.depender = pseudorandom('depender_977ba77f', 1, 3)
+                    card.ability.extra.depender = (card.ability.extra.depender) + 1
                     return true
                 end
                 }

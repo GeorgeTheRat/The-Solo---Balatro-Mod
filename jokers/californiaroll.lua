@@ -19,7 +19,7 @@ SMODS.Joker{ --California Roll
         }
     },
     pos = {
-        x = 5,
+        x = 6,
         y = 0
     },
     display_size = {
@@ -52,7 +52,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -125,10 +125,9 @@ SMODS.Joker{ --California Roll
             elseif (card.ability.extra.a or 0) == 0 then
                 return {
                     func = function()
-                card:start_dissolve()
+                card:undefined()
                 return true
-            end,
-                    message = "Destroyed!"
+            end
                 }
             end
         end
@@ -262,7 +261,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -283,7 +282,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -304,7 +303,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -325,7 +324,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -346,7 +345,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -473,7 +472,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -494,7 +493,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -515,7 +514,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -536,7 +535,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -637,7 +636,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -658,7 +657,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -679,7 +678,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -754,7 +753,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -775,7 +774,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -824,7 +823,7 @@ SMODS.Joker{ --California Roll
                         func = function()
                             local random_sets = {'Tarot', 'Planet', 'Spectral'}
                             local random_set = random_sets[math.random(1, #random_sets)]
-                            SMODS.add_card{set=random_set, key_append='joker_forge_' .. random_set:lower()}
+                            SMODS.add_card{set=random_set, soulable = undefined, key_append='joker_forge_' .. random_set:lower()}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end

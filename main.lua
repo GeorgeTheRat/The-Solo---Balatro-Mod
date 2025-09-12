@@ -98,7 +98,21 @@ SMODS.ObjectType({
         ["j_diet_cola"] = true,
         ["j_popcorn"] = true,
         ["j_ramen"] = true,
-        ["j_selzer"] = true
+        ["j_selzer"] = true,
+        ["j_solo_chocolatestrawberry"] = true,
+        ["j_solo_garlic"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "solo_solo_jokers",
+    cards = {
+        ["j_solo_bingocard"] = true,
+        ["j_solo_cuecard1"] = true,
+        ["j_solo_cuecard"] = true,
+        ["j_solo_cuecard2"] = true,
+        ["j_solo_keychain"] = true,
+        ["j_solo_motherboard"] = true
     },
 })
 
@@ -106,7 +120,11 @@ SMODS.ObjectType({
     key = "solo_sushi",
     cards = {
         ["j_solo_californiaroll"] = true,
-        ["j_solo_makiroll"] = true
+        ["j_solo_makiroll"] = true,
+        ["j_solo_salmonnigiri"] = true,
+        ["j_solo_takonigiri"] = true,
+        ["j_solo_tamago"] = true,
+        ["j_solo_tobiko"] = true
     },
 })
 

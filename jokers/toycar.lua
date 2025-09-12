@@ -16,8 +16,8 @@ SMODS.Joker{ --Toy Car
         }
     },
     pos = {
-        x = 6,
-        y = 3
+        x = 3,
+        y = 4
     },
     display_size = {
         w = 71 * 1, 

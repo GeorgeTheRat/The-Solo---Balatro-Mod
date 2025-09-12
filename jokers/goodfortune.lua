@@ -19,8 +19,8 @@ SMODS.Joker{ --Good Fortune
         }
     },
     pos = {
-        x = 6,
-        y = 1
+        x = 0,
+        y = 2
     },
     display_size = {
         w = 71 * 1, 
@@ -50,10 +50,9 @@ SMODS.Joker{ --Good Fortune
             if context.other_card:get_id() == 4 then
                 return {
                     func = function()
-                card:start_dissolve()
+                card:undefined()
                 return true
-            end,
-                    message = "Destroyed!"
+            end
                 }
             end
         end

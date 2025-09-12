@@ -2,8 +2,7 @@ SMODS.Joker{ --Bonsai
     key = "bonsai",
     config = {
         extra = {
-            odds = 10,
-            lenormand = 0
+            odds = 10
         }
     },
     loc_txt = {
@@ -18,7 +17,7 @@ SMODS.Joker{ --Bonsai
         }
     },
     pos = {
-        x = 3,
+        x = 4,
         y = 0
     },
     display_size = {
@@ -44,7 +43,7 @@ SMODS.Joker{ --Bonsai
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'lenormand', key = nil, key_append = 'joker_forge_lenormand'}
+                            SMODS.add_card{set = 'lenormand', soulable = undefined, key = nil, key_append = 'joker_forge_lenormand'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
